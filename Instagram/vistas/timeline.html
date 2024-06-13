@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styless.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom justify-content-between">
+        <div class="navbar-nav">
+            <a class="navbar-brand" href="#">
+                <img src="../img/cam.png" alt="LensLoom Logo" style="max-height: 40px;">
+                <span> LensLand</span>
+            </a>
+        </div>
+
+        <div class="ml-auto">
+            <a href="perfil.html" class="navbar-text font-weight-bold mr-4" style="color: white;">Mi perfil</a>
+            <a href="login.html" class="btn btn-outline-light">Cerrar sesión</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <img src="../img/userFoto.jpg" alt="Profile Picture" class="rounded-circle mr-2" style="width: 60px; height: 60px;">
+                            <span style="color: black; font-weight: bold;">Luisana</span>
+                        </h5>
+                        <img src="../img/FotoPerfilUser.jpg" alt="Photo" class="img-fluid w-100" style="height: 400px; object-fit: cover;">
+                        <div class="card-footer likes mt-2">
+                            <img src="../img/like.png" alt="Like Icon" class="like-icon mr-2" data-likes="580">
+                            <span class="like-count">580 likes</span>
+                        </div>
+                        <p class="mt-2" style="color: black;">Con la persona que hace mis dias mas felices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <img src="../img/userFoto.jpg" alt="Profile Picture" class="rounded-circle mr-2" style="width: 60px; height: 60px;">
+                            <span style="color: black; font-weight: bold;">Luisana</span>
+                        </h5>
+                        <img src="../img/FotoPerfilUser.jpg" alt="Photo" class="img-fluid w-100" style="height: 400px; object-fit: cover;">
+                        <div class="card-footer likes mt-2">
+                            <img src="../img/like.png" alt="Like Icon" class="like-icon mr-2" data-likes="580">
+                            <span class="like-count">580 likes</span>
+                        </div>
+                        <p class="mt-2" style="color: black;">Con la persona que hace mis dias mas felices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <img src="../img/userFoto.jpg" alt="Profile Picture" class="rounded-circle mr-2" style="width: 60px; height: 60px;">
+                            <span style="color: black; font-weight: bold;">Luisana</span>
+                        </h5>
+                        <img src="../img/FotoPerfilUser.jpg" alt="Photo" class="img-fluid w-100" style="height: 400px; object-fit: cover;">
+                        <div class="card-footer likes mt-2">
+                            <img src="../img/like.png" alt="Like Icon" class="like-icon mr-2" data-likes="580">
+                            <span class="like-count">580 likes</span>
+                        </div>
+                        <p class="mt-2" style="color: black;">Con la persona que hace mis dias mas felices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.like-icon').click(function() {
+                var likeIcon = $(this);
+                var likes = parseInt(likeIcon.attr('data-likes'));
+                var likeCount = likeIcon.siblings('.like-count');
+                
+                if (likeIcon.attr('src') === '../img/like.png') {
+                    likeIcon.attr('src', '../img/dislike.png');
+                    likes--;
+                } else {
+                    likeIcon.attr('src', '../img/like.png');
+                    likes++;
+                }
+                
+                likeIcon.attr('data-likes', likes);
+                likeCount.text(likes + ' likes');
+            });
+        });
+    </script>
+</body>
+
+</html>

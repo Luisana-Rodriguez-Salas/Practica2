@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lending Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom justify-content-between">
+        <div class="navbar-nav">
+            <a class="navbar-brand" href="#">
+                <img src="../img/cam.png" alt="LensLoom Logo" style="max-height: 40px;">
+                <span> LensLand</span>
+            </a>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline-light">Iniciar sesión</a>
+                <a href="registro.html" class="btn btn-outline-light btn-register">Registro</a>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 order-md-1">
+                <div class="header">
+                    <h1 class="display-4">Enfoca tus momentos</h1>
+                    <p class="lead">Descubre LensLand, la plataforma ideal para capturar y compartir tus momentos con
+                        calidad y creatividad. Únete hoy y haz que cada clic cuente una historia memorable.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 order-md-4 photo-card-container">
+                <div class="card photo-card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <img src="../img/FotoPerfilUser.jpg" alt="Profile Picture" class="rounded-circle mr-2"
+                                style="width: 60px; height: 60px;">
+                            Luisana
+                        </h5>
+                        <img src="../img/userFoto.jpg" alt="Photo" class="card-img-top">
+                        <div class="card-footer likes mt-2">
+                            <img src="../img/like.png" alt="Like Icon" class="like-icon mr-2" data-likes="580">
+                            <span class="like-count">580 likes</span>
+                        </div>
+                        <div class="d-flex justify-content-start mt-2">
+                            <p>Cansada estoy pero de mas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.like-icon').click(function() {
+                var likeIcon = $(this);
+                var likes = parseInt(likeIcon.attr('data-likes'));
+                var likeCount = likeIcon.siblings('.like-count');
+                
+                if (likeIcon.attr('src') === '../img/like.png') {
+                    likeIcon.attr('src', '../img/dislike.png');
+                    likes--;
+                } else {
+                    likeIcon.attr('src', '../img/like.png');
+                    likes++;
+                }
+                
+                likeIcon.attr('data-likes', likes);
+                likeCount.text(likes + ' likes');
+            });
+        });
+    </script>
+</body>
+
+</html>
